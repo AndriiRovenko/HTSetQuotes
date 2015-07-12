@@ -1,0 +1,56 @@
+@font-face {
+    font-family: myRoman;
+    src: url(fonts/Optima_Cyr.ttf);
+}
+@font-face {
+    font-family: thin;
+    src: url(fonts/light/BebasNeueThin.otf);
+}
+
+::selection {
+    background: #d8ff00;
+}
+
+div {
+    width: 180px;
+    border: 1px solid transparent;
+    padding: 5px;
+    margin: 1px;
+    font-family: sans-serif;
+}
+div.center {
+    margin: auto;
+    margin-bottom:20px;
+    width:400px;
+    border:2px solid #000;
+}
+div.centerMenu {
+    margin:2px;
+    padding:0;
+    list-style:none;
+    width: 100%;
+    display:table;
+    table-layout: fixed;
+    border:0;
+}
+div.menuItem {
+    text-align: center;
+    cursor: pointer;
+    font-size: 18px;
+    height: 38px;
+    line-height: 38px;
+    display: table-cell;
+    margin: 5px;
+}
+body {
+    background-color: #666;
+    color: #fff;
+}
+h1 {
+    font-family: sans-serif;
+    text-align: center;
+}
+h2 {
+    font-family: sans-serif;
+    text-align: center;
+}
