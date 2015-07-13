@@ -10,8 +10,8 @@
 --%>
 
 
-<%
-  protected class Quote {
+<%!
+  public class Quote {
     private String quote;
     private String color;
 
@@ -36,8 +36,8 @@
 
 %>
 <!----------------------->
-<%
-  protected class RandomColorGenerator {
+<%!
+  public class RandomColorGenerator {
   private int red;
   private int green;
   private int blue;
@@ -59,8 +59,8 @@
 
 %>
 <!----------------------->
-<%
-  protected class MyList{
+<%!
+  public class MyList{
     private List<Quote> quoteList = new ArrayList<Quote>();
 
     MyList(int count) {
@@ -115,7 +115,8 @@
     </style>
   </head>
   <body>
-  <!--
+
+
     <div class="center">
       <h1>
         <%=list.getQuote(tmpNumber)%>
@@ -128,13 +129,12 @@
       <%
       for (int i=0; i<5; i++) {
         %>
-        <div class="menuItem" style="background-color:<%=list.getColor(i)%>">;
+        <div class="menuItem" style="background-color:<%=list.getColor(i)%>">
           <%=list.getQuote(i)%>&nbsp;
         </div>
         <%
       }
       %>
     </div>
-    -->
   </body>
 </html>
