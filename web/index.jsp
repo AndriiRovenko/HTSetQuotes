@@ -1,6 +1,8 @@
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.Random" %>
+<%@ page import="java.io.PrintWriter" %>
+<%@ page import="java.io.FileOutputStream" %>
 <%--
   Created by IntelliJ IDEA.
   User: andrew
@@ -86,19 +88,36 @@
       return quoteList.size();
     }
   }
+
+  public void save(String fileName) {
+    try {
+      PrintWriter pw = new PrintWriter(new FileOutputStream(fileName));
+    } catch (Exception ex) {}
+    for (Quote quote : )
+  }
+  public void load(String fileName) {
+
+  }
+%>
+
+<%
+
 %>
 <!--program part-->
 <%
 
+  int quotesCounter = 5;
   MyList list = new MyList();
   Random rnd = new Random();
-  int tmpNumber = rnd.nextInt(5);
+  int tmpNumber = rnd.nextInt(quotesCounter);
 
   list.add("first quote", "#c7afa3");
   list.add("second quote", "#eadcd9");
   list.add("third quote", "#d0c9e1");
   list.add("fourth quote", "#7b6f92");
   list.add("fifth quote", "#413a5d");
+
+  quotesCounter = list.len();
 
 %>
 
@@ -127,7 +146,7 @@
     </div>
     <div class="centerMenu">
       <%
-      for (int i=0; i<5; i++) {
+      for (int i=0; i<quotesCounter; i++) {
         %>
         <div class="menuItem" style="background-color:<%=list.getColor(i)%>">
           <%=list.getQuote(i)%>&nbsp;
@@ -135,6 +154,19 @@
         <%
       }
       %>
+    </div>
+    <div class="inputForm">
+      <form name="inputForm" align="center">
+        <input type="text" name="quote" placeholder="quote">
+        <input type="text" name="color" placeholder="#ffffff">
+        <input type="submit"><br>
+        <%String quote = request.getParameter("quote");%>
+        <%String color = request.getParameter("color");%>
+        <%list.add(quote, color);%>
+        <%=quote%>
+        <%=color%>
+      </form>
+
     </div>
   </body>
 </html>

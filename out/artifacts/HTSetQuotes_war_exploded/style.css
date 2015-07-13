@@ -42,6 +42,13 @@ div.menuItem {
     display: table-cell;
     margin: 5px;
 }
+div.inputForm {
+    background-color: #777;
+    padding: 30px;
+    width: 500px;
+    height: 200px;
+    margin: 10px auto;
+}
 body {
     background-color: #666;
     color: #fff;
